@@ -1,0 +1,141 @@
+:root {
+    --primary-color: #006CB4;
+    --warning-color: #E40C2A;
+    --spacing: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: var(--spacing);
+    background-color: var(--primary-color);
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+    .menu a {
+        color: white;
+        text-decoration: none;
+    }
+
+/* MAIN */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing);
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* SEARCH */
+#search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: var(--spacing);
+}
+
+#keyword {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    padding: 10px 20px;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* EVENT GRID */
+#event-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
+}
+
+/* EVENT CARD */
+.event-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: var(--spacing);
+    background-color: white;
+}
+
+    .event-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .event-card h2 {
+        font-size: 20px;
+    }
+
+        .event-card h2 a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+    .event-card p {
+        line-height: 1.5;
+    }
+
+.sold-out {
+    display: inline-block;
+    padding: 8px 12px;
+    color: white;
+    background-color: var(--warning-color);
+    border-radius: 5px;
+}
+
+/* FOOTER */
+footer {
+    padding: var(--spacing);
+    text-align: center;
+    background-color: #e5eaf0;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    #event-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1200px) {
+    #event-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
